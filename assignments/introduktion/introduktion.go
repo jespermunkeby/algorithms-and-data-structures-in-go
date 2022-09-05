@@ -1,8 +1,8 @@
 package main
 
 import (
+	"algorithms-and-datastructures-in-go/utils"
 	"fmt"
-	"math"
 	"math/rand"
 	"time"
 )
@@ -112,51 +112,6 @@ func time_of_array_duplicate_search(n int, tries int) []time.Duration {
 
 }
 
-func median(data []int) float64 {
-
-	var length = len(data)
-	var midpoint = float64(length) / 2
-
-	var floored = int(math.Floor(midpoint))
-	var ceiled = int(math.Ceil(midpoint))
-
-	if floored == ceiled {
-		return float64(data[floored])
-	} else {
-		return float64(data[floored]+data[floored]) / 2
-	}
-}
-
-func average(data []int) float64 {
-	var sum = 0
-	for _, elem := range data {
-		sum += elem
-	}
-
-	return float64(sum) / float64(len(data))
-}
-
-func outliers(data []int) (minimum float64, maximum float64) {
-	if len(data) == 0 {
-		panic("expected data to contain elements")
-	}
-
-	var min = data[0]
-	var max = data[0]
-
-	for _, elem := range data {
-		if elem > max {
-			max = elem
-		}
-
-		if elem < min {
-			min = elem
-		}
-	}
-
-	return float64(min), float64(max)
-}
-
 type timetester func(int, int) []time.Duration
 
 func compute_and_display(timetester_func timetester, tries int, n_samples []int) {
@@ -167,9 +122,9 @@ func compute_and_display(timetester_func timetester, tries int, n_samples []int)
 		}
 
 		//display
-		var avg = average(nanoseconds)
-		var median = median(nanoseconds)
-		var minimum, maximum = outliers(nanoseconds)
+		var avg = utils.Average(nanoseconds)
+		var median = utils.Median(nanoseconds)
+		var minimum, maximum = utils.Outliers(nanoseconds)
 
 		fmt.Println(
 			"min: ", minimum, "\t",
