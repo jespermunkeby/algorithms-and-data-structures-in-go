@@ -9,7 +9,7 @@ import (
 func TestSearchBinary(t *testing.T) {
 	// some random tests for TRUE
 	for n := 1; n < 100; n++ {
-		arr := generateSortedNoDuplicates(n)
+		arr := generateSorted(n)
 		key := arr[rand.Intn(n)]
 		if !searchBinary(arr, key) {
 			fmt.Print(arr, key, "\n")
