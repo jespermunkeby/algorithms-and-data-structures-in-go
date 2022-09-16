@@ -11,3 +11,4 @@
 
 # notes and ideas
 https://medium.com/@Arafat./introducing-dataviz-a-data-structure-visualization-library-for-golang-f6e60663bc9d
+
