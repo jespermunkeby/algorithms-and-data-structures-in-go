@@ -413,7 +413,7 @@ func main() {
 	})
 
 	duplicatePlot := plot.New()
-	duplicatePlot.Title.Text = "median runtime of duplicate search, 500 tries"
+	duplicatePlot.Title.Text = "median runtime of duplicate search, 10 tries"
 
 	medianOld := duplicateSearchResults.Scatter(utils.Med, draw.PlusGlyph{}, utils.Red)
 	//maxOld := duplicateSearchResults.Scatter(utils.Max, draw.PyramidGlyph{}, utils.Red)

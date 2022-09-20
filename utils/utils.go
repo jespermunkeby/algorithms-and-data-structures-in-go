@@ -270,6 +270,15 @@ func (r Results) Scatter(scatterType ScatterType, glyph draw.GlyphDrawer, scatte
 	return p
 }
 
+func IntLinspace(n int, min int, max int) []int {
+	arr := make([]int, n)
+	for i := range arr {
+		arr[i] = (i * max) / n
+	}
+
+	return arr
+}
+
 // type FitType int
 
 // const (
