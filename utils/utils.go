@@ -273,7 +273,7 @@ func (r Results) Scatter(scatterType ScatterType, glyph draw.GlyphDrawer, scatte
 func IntLinspace(n int, min int, max int) []int {
 	arr := make([]int, n)
 	for i := range arr {
-		arr[i] = (i * max) / n
+		arr[i] = ((i * max) / n) + 1
 	}
 
 	return arr
